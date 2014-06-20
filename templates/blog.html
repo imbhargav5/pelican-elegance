@@ -2,18 +2,22 @@
 {% block content %}
     {% if articles %}
         {% for article in (articles_page.object_list if articles_page else articles) %}
-            <article>
-                <h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
-                in
-   				<a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
-                <!--
-                <div class="summary">{{ article.summary }}
-                    {% include 'includes/comment_count.html' %}
-                </div>-->
+            <article class="post-condensed">
+                <h3>
+                	<a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                	<br/>
+                	<small>
+                		{% if article.sub_title %}
+							{{ article.sub_title }}
+						{% endif %}
+                	</small>
+                </h3>
+                <div class="post-meta">
+                	in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+                </div>
             </article>
             <hr/>
         {% endfor %}
     {% endif %}
-
     {% include 'includes/pagination.html' %}
 {% endblock content %}

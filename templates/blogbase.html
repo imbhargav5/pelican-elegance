@@ -55,9 +55,11 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 
 		<link href='http://fonts.googleapis.com/css?family=Poiret+One|PT+Serif|Open+Sans:400,300' rel='stylesheet' type='text/css'>
 
-		<link rel="stylesheet" href="{{ SITEURL }}/theme/css/bootstrap.min.css" type="text/css"/>
+		<link rel="stylesheet" href="{{ SITEURL }}/theme/css/bootstrap.min.lumen.css" type="text/css"/>
 		
 		<link href="{{ SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet">
+		
+		<link rel="stylesheet" href="{{ SITEURL }}/theme/css/custom.css" type="text/css"/>
 		
 		{% if TYPOGRIFY %}
 			<link href="{{ SITEURL }}/theme/css/typogrify.css" rel="stylesheet">
@@ -73,61 +75,19 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 
 	</head>
 	<body>
-		<!--
-		<div class="navbar {% if BOOTSTRAP_NAVBAR_INVERSE %}navbar-inverse{% else %}navbar-default{% endif %} navbar-fixed-top" role="navigation">
-		<div class="container">
-		<div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		</button>
-		<a href="{{ SITEURL }}/" class="navbar-brand">
-		{% if SITELOGO %}<img src="{{ SITEURL }}/{{ SITELOGO }}" width="{{ SITELOGO_SIZE }}"/> {% endif %}
-		{% if not HIDE_SITENAME %}{{ SITENAME }}{% endif %}
-		</a>
-		</div>
-		<div class="collapse navbar-collapse navbar-ex1-collapse">
-		<ul class="nav navbar-nav">
-		{% for title, link in MENUITEMS %}
-		<li><a href="{{ link }}">{{ title }}</a></li>
-		{% endfor %}
-		{% if DISPLAY_PAGES_ON_MENU %}
-		{% for p in PAGES %}
-		<li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">
-		{{ p.title }}
-		</a></li>
-		{% endfor %}
-		{% endif %}
-		{% if DISPLAY_CATEGORIES_ON_MENU %}
-		{% for cat, null in categories %}
-		<li {% if cat == category %}class="active"{% endif %}>
-		<a href="{{ SITEURL }}/{{ cat.url }}">{{ cat | capitalize }}</a>
-		</li>
-		{% endfor %}
-		{% endif %}
-		</ul>
-		<ul class="nav navbar-nav navbar-right">
-		<li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
-		</ul>
-		</div>
-		</div>
-		</div>
-		-->
-		<div class="container-fluid">
+		<div class="container-fluid header">
 			<div class="row col-md-6 col-md-offset-3">
-				<h1 class="text-left">{{ BLOGTITLE }} <small><small>{{ BLOGTAGLINE }}</small></small></h1>
-				<h6 class="text-left">by Abhilash Meesala</h6>
+				<h1 class="text-left"><a href="{{ SITEURL }}/blog">{{ BLOGTITLE }}</a><small><small>{{ BLOGTAGLINE }}</small></small></h1>
+				<h5 class="text-left">by <a href="{{ SITEURL }}">Abhilash Meesala</a></h5>
 			</div>
 		</div>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-sm-9 col-md-6 col-md-offset-3">
+				<div class="col-sm-9 col-md-6 col-md-offset-3 content">
 					{% block content %}
 					{% endblock %}
 				</div>
-				<div class="col-sm-3 col-md-3 text-right">
+				<div class="col-sm-3 col-md-3 text-right sidebar">
 					{% include 'includes/blog_sidebar.html' %}
 				</div>
 			</div>
