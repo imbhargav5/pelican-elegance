@@ -1,4 +1,4 @@
-{% extends "blogbase.html" %}
+{% extends "pagebase.html" %}
 {% block content %}
     {% if articles %}
         {% for article in (articles_page.object_list if articles_page else articles) %}
@@ -17,6 +17,5 @@
             <hr/>
         {% endfor %}
     {% endif %}
-
     {% include 'includes/pagination.html' %}
 {% endblock content %}

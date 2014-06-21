@@ -6,11 +6,20 @@
 	<article>
 		<header >
 			<h2><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-			title="Permalink to {{ article.title|striptags }}"> {{ article.title }} </a></h2>
+			title="Permalink to {{ article.title|striptags }}"> {{ article.title }} </a>
+			<br/>
+            	<small>
+            		{% if article.sub_title %}
+						{{ article.sub_title }}
+					{% endif %}
+            	</small>
+			</h2>
 		</header>
 		{{ article.content }}
-		<div class="panel-body">
-			{% include "includes/article_info.html" %}
+		<div class="article-meta">
+			in
+    		<a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a> 
+			{% include 'includes/taglist.html' %}
 		</div>
 		{% include 'includes/related-posts.html' %}
 		{% include 'includes/addthis.html' %}
