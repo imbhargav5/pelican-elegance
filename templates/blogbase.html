@@ -3,7 +3,7 @@
 xmlns:og="http://ogp.me/ns#"
 xmlns:fb="https://www.facebook.com/2008/fbml">
 	<head>
-		<title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+		<title>{% block title %}{{ BLOGTITLE }}{% endblock %}</title>
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta charset="utf-8">
@@ -59,7 +59,7 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 		
 		<link href="{{ SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet">
 		
-		<link rel="stylesheet" href="{{ SITEURL }}/theme/css/custom.css" type="text/css"/>
+		<link rel="stylesheet" href="{{ SITEURL }}/theme/css/elegance.css" type="text/css"/>
 		
 		{% if TYPOGRIFY %}
 			<link href="{{ SITEURL }}/theme/css/typogrify.css" rel="stylesheet">

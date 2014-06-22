@@ -59,7 +59,7 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 		
 		<link href="{{ SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet">
 		
-		<link rel="stylesheet" href="{{ SITEURL }}/theme/css/custom.css" type="text/css"/>
+		<link rel="stylesheet" href="{{ SITEURL }}/theme/css/elegance.css" type="text/css"/>
 		
 		{% if TYPOGRIFY %}
 			<link href="{{ SITEURL }}/theme/css/typogrify.css" rel="stylesheet">
@@ -77,18 +77,14 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 	<body>
 		<div class="container-fluid header">
 			<div class="row col-md-6 col-md-offset-3">
-				<h1 class="text-left"><a href="{{ SITEURL }}/blog">{{ BLOGTITLE }}</a><small><small>{{ BLOGTAGLINE }}</small></small></h1>
-				<h5 class="text-left">by <a href="{{ SITEURL }}">Abhilash Meesala</a></h5>
+				<h1 class="text-left"><a href="{{ SITEURL }}">{{ SITENAME }}</a><small><small>{{ TAGLINE }}</small></small></h1>
 			</div>
 		</div>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-sm-9 col-md-6 col-md-offset-3 content">
+				<div class="col-sm-12 col-md-12 content">
 					{% block content %}
 					{% endblock %}
-				</div>
-				<div class="col-sm-3 col-md-3 text-right sidebar">
-					{% include 'includes/blog_sidebar.html' %}
 				</div>
 			</div>
 		</div>

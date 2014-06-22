@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "pagebase.html" %}
 {% block title %}{{ page.title }} - {{ SITENAME }}{% endblock %}
 {% block content %}
     <section id="content" class="body">
@@ -10,11 +10,5 @@
                 get the pdf
             </a>
         {% endif %}
-        <div class="entry-content">
-            {{ page.content }}
-            {% if page.comments == 'enabled' %}
-                {% include 'includes/comments.html' %}
-            {% endif %}
-        </div>
     </section>
 {% endblock %}
