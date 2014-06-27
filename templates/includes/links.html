@@ -1,0 +1,11 @@
+{% if LINKS %}
+      <ul>
+        {% for name, link in LINKS %}
+        <li>
+            <a href="{{ link }}" target="_blank">
+                {{ name }}
+            </a>
+        </li>
+        {% endfor %}
+      </ul>
+{% endif %}

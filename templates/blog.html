@@ -4,13 +4,14 @@
         {% for article in (articles_page.object_list if articles_page else articles) %}
             <article class="post-condensed">
                 <h3>
-                	<a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                	<a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}
                 	<br/>
                 	<small>
                 		{% if article.sub_title %}
 							{{ article.sub_title }}
 						{% endif %}
                 	</small>
+                	</a>
                 </h3>
                 <div class="post-meta">
                 	in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>

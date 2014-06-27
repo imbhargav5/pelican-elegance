@@ -1,12 +1,17 @@
-{% extends "pagebase.html" %}
+{% extends "homepagebase.html" %}
+
 {% block content %}
-    {% if articles %}
-        {% for article in (articles_page.object_list if articles_page else articles) %}
-            <article>
-                <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
-            </article>
-            <hr/>
-        {% endfor %}
-    {% endif %}
-    {% include 'includes/pagination.html' %}
+	{% if articles %}
+	<section>
+		{% for article in (articles_page.object_list if articles_page else articles) %}
+			<h4>
+			<a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}<br/>
+			{% if article.sub_title %}
+				<small>{{ article.sub_title }}</small>
+			{% endif %}
+			</a>
+			</h4>
+		{% endfor %}
+	</section>
+	{% endif %}
 {% endblock content %}
