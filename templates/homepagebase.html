@@ -10,7 +10,8 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		{% if FAVICON %}
-		<link href="{{ SITEURL }}/{{ FAVICON }}" rel="icon">
+		<link rel="icon" href="{{ SITEURL }}/{{ FAVICON }}" type="image/x-icon" rel="icon" />
+		<link rel="shortcut icon" href="{{ SITEURL }}/{{ FAVICON }}" type="image/x-icon" rel="icon" />
 		{% endif %}
 
 		{# Open Graph tags #}
